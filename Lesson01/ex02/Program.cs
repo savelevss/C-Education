@@ -5,16 +5,15 @@
 //a = -3 b = 9 -> нет
 
 
-int A = 25;
-int B = 5;
+int a = 25;
+int b = 5;
 
-if ("A == B*B")
-{
+
+
     Console.WriteLine("Да!");
-}
-else 
-{
+ 
+
     Console.WriteLine("NO!");
-}
+
 
 
