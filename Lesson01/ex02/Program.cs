@@ -4,16 +4,16 @@
 //a = 9, b = -3 -> да
 //a = -3 b = 9 -> нет
 
+Console.Write("Введите первое число  ");
+int x = int.Parse(Console.ReadLine()); 
 
-int a = 25;
-int b = 5;
+Console.Write("Введите второе число  ");
+int y = int.Parse(Console.ReadLine()); 
 
-
-
-    Console.WriteLine("Да!");
- 
-
-    Console.WriteLine("NO!");
+if (x==y*y)
+Console.WriteLine("Первое число является квадратом второго!");
+ else 
+    Console.WriteLine("Первое число НЕ является квадратом второго!");
 
 
 
