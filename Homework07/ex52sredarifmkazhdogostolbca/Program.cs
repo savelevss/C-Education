@@ -32,23 +32,23 @@ void PrintArray(int[,] table)
 double Middle(int[,] arr)
 {
     double mid = 0;
-    int count = 0;
-    for (int j = 0; j < arr.GetLength(1); j++)
+    double sum = 0;
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int i = 0; i < arr.GetLength(0); i++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
-            
-            while (i==count&&i<arr.GetLength(1))
-            {
-                mid=(mid+arr[i,j])/arr.GetLength(1);
-                i++;
-                Console.WriteLine(mid);
-            }
-            
+            sum=(sum+arr[j,i]);
         }
+        mid = sum/arr.GetLength(0);
+        sum = 0;
+        
+        Console.WriteLine($"Среднее арифметическое столбца {i+1} = {mid}"); 
+            
     }
     return mid;
 }
+    
+
 
 Console.WriteLine("Введите количество строк двумерного массива ");
 int m = Convert.ToInt32(Console.ReadLine());
