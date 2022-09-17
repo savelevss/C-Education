@@ -8,7 +8,7 @@
 // 9 5 3 2
 // 8 4 4 2
 
-void FillArray(int [,] table)
+void Filltable(int [,] table)
 {
     Random random = new Random();
     for (int i = 0; i < table.GetLength(0); i++)
@@ -19,7 +19,7 @@ void FillArray(int [,] table)
         }
     }
 }
-void PrintArray(int[,] table)
+void Printtable(int[,] table)
 {
     for (int i = 0; i < table.GetLength(0); i++)
     {
@@ -31,11 +31,36 @@ void PrintArray(int[,] table)
     }
 }
 
+
+
+void SortTableRows(int[,] table)
+{
+  for (int i = 0; i < table.GetLength(0); i++)
+  {
+    for (int j = 0; j < table.GetLength(1); j++)
+    {
+      for (int k = 0; k < table.GetLength(1) - 1; k++)
+      {
+        if (table[i, k] > table[i, k + 1])
+        {
+          int temporary = table[i, k + 1];
+          table[i, k + 1] = table[i, k];
+          table[i, k] = temporary;
+        }
+      }
+    }
+  }
+}
+
 Console.WriteLine("Введите количество строк");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов");
 int cols = Convert.ToInt32(Console.ReadLine());
 
 int [,] table = new int [rows,cols];
-FillArray(table);
-PrintArray(table);
+Filltable(table);
+Printtable(table);
+Console.WriteLine("Массив после сортировки строк");
+SortTableRows(table);
+Printtable(table);
+
